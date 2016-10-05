@@ -8,7 +8,7 @@ var createGrid = function() {
   for (var i = 0; i < 16; i++) {
     grid[i] =[];
     for (var j = 0; j < 9; j++) {
-      grid[i][j] = { x: (i * 100), y: (j * 100)};
+      grid[i][j] = { x: (i * -100), y: (j * -100)};
     }
   }
 }

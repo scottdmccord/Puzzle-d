@@ -11,6 +11,8 @@
   width: 1600px;
   background-color: grey;
   flex-wrap: wrap;
+  flex-direction: column;
+
 
 }
 
