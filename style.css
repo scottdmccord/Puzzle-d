@@ -1,0 +1,15 @@
+#board {
+
+  background-size: cover;
+  height: 600px;
+  width: 900px;
+}
+
+.flexbox {
+  display: flex;
+  height: 600px;
+  width: 900px;
+  background-color: grey;
+  flex-wrap: wrap;
+
+}
