@@ -5,11 +5,17 @@
   width: 900px;
 }
 
-.flexbox {
+.container {
   display: flex;
-  height: 600px;
-  width: 900px;
+  height: 450px;
+  width: 800px;
   background-color: grey;
   flex-wrap: wrap;
 
+}
+
+.piece {
+  background-image: url("http://i.imgur.com/HWs6Mym.jpg");
+  height: 50px;
+  width: 50px;
 }
