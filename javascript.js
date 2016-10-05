@@ -17,3 +17,15 @@ var createGrid = function() {
   }
 
 createGrid();
+
+var $container = $('container');
+
+var createBoard = function() {
+  for(var i = 0; i < grid.length; i++) {
+    var $piece = $('<div>');
+    $piece.addClass('piece');
+    $piece.css({
+      'background': 'url('
+    })
+  }
+}
