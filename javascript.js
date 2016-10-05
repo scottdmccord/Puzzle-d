@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 console.log("Puzzle-d!");
+
 });
 
 // create the game state:
@@ -7,12 +8,12 @@ console.log("Puzzle-d!");
 var grid = [];
 
 var createGrid = function() {
-  for (var i = 0; i <= WidthOfBoard; i += 50) {
-    for (var j = 0; j <= heightOfBoard; j += 50) {
-      grid[i][j] = {
-        x: i;
-        y: j;
+  for (var i = 0; i < 5; i++) {
+    grid[i] =[];
+    for (var j = 0; j < 5; j++) {
+      grid[i][j] = { x: (j * 50), y: (i * 50)}
       }
     }
   }
-}
+
+createGrid();
