@@ -5,10 +5,10 @@
 var grid = [];
 
 var createGrid = function() {
-  for (var i = 0; i < 12; i++) {
+  for (var i = 0; i < 16; i++) {
     grid[i] =[];
-    for (var j = 0; j < 18; j++) {
-      grid[i][j] = { x: (j * 50), y: (i * 50)};
+    for (var j = 0; j < 9; j++) {
+      grid[i][j] = { x: (i * 100), y: (j * 100)};
     }
   }
 }

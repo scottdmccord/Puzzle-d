@@ -7,8 +7,8 @@
 
 .container {
   display: flex;
-  height: 450px;
-  width: 800px;
+  height: 900px;
+  width: 1600px;
   background-color: grey;
   flex-wrap: wrap;
 
@@ -16,6 +16,6 @@
 
 .piece {
   background-image: url("http://i.imgur.com/HWs6Mym.jpg");
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
 }
