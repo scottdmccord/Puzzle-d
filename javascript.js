@@ -21,11 +21,14 @@ createGrid();
 //   )
 
 
+
 var isWin = function(a,b) {
   return a.every( function(piece, i) {
     return piece === b[i];
   })
 }
+
+var turn = 0;
 
 // after DOM loads
 $(function(event) {
@@ -36,14 +39,13 @@ var createBoard = function() {
   var counter = 0;
   for (var a = 0; a < grid.length; a++) {
        for(var b  = 0; b < grid[a].length; b++) {
-         var $block = $('<div>');
-         $block.addClass('piece');
-         $block.attr('id' , 'piece' + counter);
-         $block.attr('draggable', 'true');
-         $block.css({
+         var block = $('<div>');
+         block.addClass('piece');
+         block.attr('id' , 'piece' + counter);
+         block.css({
            'background-position' : grid[a][b].x+'px '+grid[a][b].y+'px'
           })
-         $container.append($block);
+         $container.append(block);
          counter++;
       }
   }
@@ -54,12 +56,13 @@ createBoard();
 function createVariables() {
   boxes = $('.piece');
   solution = $('.piece').toArray();
+  currentBoard = $('.piece').toArray();
 }
 
 createVariables();
 
 
-
+// Function that generates the puzzle.
 var startPuzzle = function() {
   for(var i = 0; i < boxes.length; i++) {
     var target = Math.floor(Math.random() * boxes.length - 1) + 1;
@@ -69,9 +72,7 @@ var startPuzzle = function() {
   currentBoard = $('.piece').toArray();
 }
 
-
-$('.generatePuzzle').on('click', startPuzzle);
-
+// Function that solves puzzle. To remove after game finished.
 var solvePuzzle = function() {
   for (var i = 0; i < boxes.length; i++) {
     $("#piece"+ i).insertAfter("#piece" + (i-1));
@@ -79,14 +80,43 @@ var solvePuzzle = function() {
   currentBoard = $('.piece').toArray();
 }
 
+var swap = function() {
+  console.log("test");
+  if(turn === 0) {
+    var divA = this.div;
+  }
+}
+
+// Generates puzzle
+$('.generatePuzzle').on('click', startPuzzle);
+
+
+
+// Solves the puzzle (to remove after game is built)
 $('.fixPuzzle').on('click', solvePuzzle);
 
-/*var isWin = function() {
-  return solution.every(function(piece, i) {
-    return piece === currentBoard[i]
-  })*/
+
+// Win condition check
+$('.winCheck').on('click', function() {
+    if(isWin(solution, currentBoard) === true) {
+      alert("you won!");
+    }
+});
+
+$('.piece').on('click', function() {
+  console.log('test!');
+  if(turn === 0) {
+    console.log('turn 0');
+    turn++;
+  } else {
+    console.log('turn 1');
+    turn--;
+  }
+})
 
 
+// take two variables, assign first box with one, second box to another
+// also need a placeholder variable
 
 // iterating throuhg one array and checking it based off the index of the other array.
 
