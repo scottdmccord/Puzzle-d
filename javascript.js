@@ -9,6 +9,7 @@ var createGrid = function() {
     grid[i] =[];
     for (var j = 0; j < 9; j++) {
       grid[i][j] = { x: (i * -100), y: (j * -100)};
+      //ask matt why the pixel width and height needed to be negative
     }
   }
 }
@@ -37,6 +38,28 @@ var createBoard = function() {
 }
 
 createBoard();
+
+var boxes = $('.piece');
+
+var startPuzzle = function() {
+  for(var i = 0; i < boxes.length; i++) {
+    var target = Math.floor(Math.random() * boxes.length - 1) + 1;
+    var target2 = Math.floor(Math.random() * boxes.length -1) + 1;
+    boxes.eq(target).before(boxes.eq(target2));
+  }
+}
+
+$('.generatePuzzle').on('click', startPuzzle);
+
+var boxes = $('.piece');
+var solvePuzzle = function() {
+  for (var i = 0; i < boxes.length; i++) {
+    $("#piece"+ i).insertAfter("#piece" + (i-1));
+    // I got this to work by playing with +1 and -1. Need to understand why.
+  }
+}
+
+$('.fixPuzzle').on('click', solvePuzzle);
 
 });
 
