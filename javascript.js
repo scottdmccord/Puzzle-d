@@ -27,7 +27,8 @@ $(function(event) {
 console.log("Puzzle-d!");
 
 // VARIABLES
-currentBoard = $('#piece').toArray();
+
+var currentBoard = $('#piece').toArray();
 
 
 // Function to create the individual divs that will populate the game board.
@@ -51,21 +52,11 @@ var createBoard = function() {
 
 createBoard();
 
-// function to check if all of the puzzle pieces are in the correct order on the board.
-function checkWin() {
-  var win = true;
-  for (var i = 0; i < currentBoard.length; i++) {
-    if (currentBoard[i].id != ('piece' + i)) {
-      win = false;
-    }
-  }
-  console.log(win);
-}
-
 // Function that generates the puzzle.
 var startPuzzle = function() {
   boxes = $('.piece');
   for(var i = 0; i < boxes.length; i++) {
+    boxes.addClass('clickPiece');
     var target = Math.floor(Math.random() * boxes.length - 1) + 1;
     var target2 = Math.floor(Math.random() * boxes.length -1) + 1;
     boxes.eq(target).before(boxes.eq(target2));
@@ -74,8 +65,11 @@ var startPuzzle = function() {
   this.disabled = true;
 }
 
+
 // On first click collect piece ID, on second cick switch previous piece with current piece.
-$('.piece').on('click', function() {
+
+function swapTiles() {
+  $('.clickPiece').on('click', function() {
   console.log('test!');
   if(turn === 0) {
     console.log('turn 0');
@@ -90,9 +84,23 @@ $('.piece').on('click', function() {
     divA.style.backgroundPosition = holder;
     divB.id = divA.id;
     divA.id = holderId;
+    // checks to see if you've put the puzzle back together
+    checkWin();
     turn--;
+   }
+  })
+}
+
+// function to check if all of the puzzle pieces are in the correct order on the board.
+function checkWin() {
+  var win = true;
+  for (var i = 0; i < currentBoard.length; i++) {
+    if (currentBoard[i].id != ('piece' + i)) {
+      win = false;
+    }
   }
-})
+  console.log(win);
+}
 
 // Function that solves puzzle. To remove after game finished.
 var solvePuzzle = function() {
@@ -108,6 +116,7 @@ var solvePuzzle = function() {
 
 // Generates puzzle
 $('.generatePuzzle').on('click', startPuzzle);
+$('.generatePuzzle').on('click', swapTiles);
 
 
 // Solves the puzzle (to remove after game is built)
