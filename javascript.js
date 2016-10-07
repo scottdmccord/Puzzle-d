@@ -21,7 +21,6 @@ createGrid();
 //   )
 
 
-
 var isWin = function(a,b) {
   return a.every( function(piece, i) {
     return piece === b[i];
@@ -80,12 +79,6 @@ var solvePuzzle = function() {
   currentBoard = $('.piece').toArray();
 }
 
-var swap = function() {
-  console.log("test");
-  if(turn === 0) {
-    var divA = this.div;
-  }
-}
 
 // Generates puzzle
 $('.generatePuzzle').on('click', startPuzzle);
@@ -103,55 +96,41 @@ $('.winCheck').on('click', function() {
     }
 });
 
+
+
 $('.piece').on('click', function() {
   console.log('test!');
   if(turn === 0) {
     console.log('turn 0');
+    divA = this;
+    // divCoors = this.style('css', 'background-positon');
     turn++;
-  } else {
+  } else if(turn === 1) {
+    divB = this;
+    holder = this.style.backgroundPosition;
+    holderId = this.id;
     console.log('turn 1');
+    divB.style.backgroundPosition = divA.style.backgroundPosition;
+    divA.style.backgroundPosition = holder;
+    divB.id = divA.id;
+    divA.id = holderId;
     turn--;
+    // divB.style.backgroundPosition = divA.style.backgroundPosition;
+    // divB.style.backgroundPosition = holder.style.backgroundPosition;
+    // divA.id = divB.id;
+    // divB.id = holder.id;
+    // divB.style.backgroundPosition = divA.style.backgroundPosition;
+    // divA.style.backgroundPosition = holder.style.backgroundPosition;
+    // console.log(divA);
+    // console.log(divB);
+    // turn--;
+  // }
   }
 })
 
 
-// take two variables, assign first box with one, second box to another
-// also need a placeholder variable
-
-// iterating throuhg one array and checking it based off the index of the other array.
-
 
 });
-// array method called
-// map and foreach are internal loopers of function
-// every is a kind of map, instead of looping over each one, it also cehcks if something is true and collects a true
 
 
-
-// // make the solutions array
-//   var solutionArray = [];
-
-//   // will this always be in order?
-//   var boxes = $('.piece');
-
-//   var callSolution = function() {
-//     for (var i = 0; i < boxes.length; i++) {
-//     solutionArray[i] = $("#piece"+i);
-//     }
-//   }
-
-// function recordSolution(b) {
-//   const record = boxes.map( box =>)
-// }
-
-
-
-// winning conditions notes
-// a[0] = b[0]
-
-// create a solution array on load
-// once puzzle is generated, scan and fill a new array
-// compare every element across the array to see if it matches the win array
-// if they match, trigger the win conditiom
-// this array needs to be updated every time a puzzle piece switches squares
 
