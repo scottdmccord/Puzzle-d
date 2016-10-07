@@ -21,11 +21,11 @@ createGrid();
 //   )
 
 
-var isWin = function(a,b) {
-  return a.every( function(piece, i) {
-    return piece === b[i];
-  })
-}
+// var isWin = function(a,b) {
+//   return a.every( function(piece, i) {
+//     return piece === b[i];
+//   })
+// }
 
 var turn = 0;
 
@@ -52,14 +52,28 @@ var createBoard = function() {
 
 createBoard();
 
+
 function createVariables() {
   boxes = $('.piece');
-  solution = $('.piece').toArray();
-  currentBoard = $('.piece').toArray();
+  // solution = $('.piece').toArray();
+  currentBoard = $('#piece').toArray();
 }
 
+// solution = $('.piece').toArray();
 createVariables();
 
+
+function checkWin() {
+  var win = true;
+  for (var i = 0; i < currentBoard.length; i++) {
+    if (currentBoard[i].id != ('piece' + i)) {
+      console.log(currentBoard[i].id)
+      console.log('piece' + i)
+      win = false;
+    }
+  }
+  console.log(win);
+}
 
 // Function that generates the puzzle.
 var startPuzzle = function() {
@@ -90,20 +104,19 @@ $('.fixPuzzle').on('click', solvePuzzle);
 
 
 // Win condition check
-$('.winCheck').on('click', function() {
-    if(isWin(solution, currentBoard) === true) {
-      alert("you won!");
-    }
-});
+// $('.winCheck').on('click', function() {
+//     if(isWin(solution, currentBoard) === true) {
+//       alert("you won!");
+//     }
+// });
+$('.winCheck').on('click', checkWin);
 
-
-
+// CLick and swap function
 $('.piece').on('click', function() {
   console.log('test!');
   if(turn === 0) {
     console.log('turn 0');
     divA = this;
-    // divCoors = this.style('css', 'background-positon');
     turn++;
   } else if(turn === 1) {
     divB = this;
@@ -115,19 +128,8 @@ $('.piece').on('click', function() {
     divB.id = divA.id;
     divA.id = holderId;
     turn--;
-    // divB.style.backgroundPosition = divA.style.backgroundPosition;
-    // divB.style.backgroundPosition = holder.style.backgroundPosition;
-    // divA.id = divB.id;
-    // divB.id = holder.id;
-    // divB.style.backgroundPosition = divA.style.backgroundPosition;
-    // divA.style.backgroundPosition = holder.style.backgroundPosition;
-    // console.log(divA);
-    // console.log(divB);
-    // turn--;
-  // }
   }
 })
-
 
 
 });
