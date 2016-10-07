@@ -8,6 +8,10 @@ var grid = [];
 var turn = 0;
 
 
+// images mostly come from http://wallpapersafari.com/fantasy-wallpaper-hd/
+var urls = ['url("http://i.imgur.com/HWs6Mym.jpg")', 'url("http://i.imgur.com/m5JWcJs.jpg?1")', 'url(http://i.imgur.com/NABahjE.jpg?1)', 'url("http://i.imgur.com/B8xsff4.jpg?1")', 'url("http://i.imgur.com/b5gcmnR.jpg?1")', 'url("http://i.imgur.com/CWvP6zh.jpg?1")', 'url("http://i.imgur.com/wxiGxy4.jpg?1")', 'url("http://i.imgur.com/mGOb37s.jpg1")', 'url("http://i.imgur.com/v1PL2vP.jpg?1")', 'url("http://i.imgur.com/7yaWUPc.jpg?1")'];
+var randomUrl = Math.floor(Math.round(Math.random() * (urls.length - 1)))
+
 // FUNCTIONS:
 
 // function that creates the objects with x and y coordinates that get placed inside the grid array.
@@ -42,6 +46,7 @@ var createBoard = function() {
          block.addClass('piece');
          block.attr('id' , 'piece' + counter);
          block.css({
+           'background-image' : urls[randomUrl],
            'background-position' : grid[a][b].x+'px '+grid[a][b].y+'px'
           })
          $container.append(block);

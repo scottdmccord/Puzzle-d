@@ -15,7 +15,8 @@
 }
 
 .piece {
-  background-image: url("http://i.imgur.com/HWs6Mym.jpg");
+ /* background-image: url("http://i.imgur.com/HWs6Mym.jpg");*/
+ /* background-image: url("http://i.imgur.com/m5JWcJs.jpg?1");*/
   height: 100px;
   width: 100px;
 }
