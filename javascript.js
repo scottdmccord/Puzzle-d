@@ -1,9 +1,16 @@
+// Set up HTML to create the game:
 
+// VARIABLES:
 
-// create the game state:
-
+// Create an array that will still store objects that have an x and y coordinate;
 var grid = [];
+// A turn variable that enables the click and swap function;
+var turn = 0;
 
+
+// FUNCTIONS:
+
+// function that creates the objects with x and y coordinates that get placed inside the grid array.
 var createGrid = function() {
   for (var i = 0; i < 16; i++) {
     grid[i] =[];
@@ -15,23 +22,15 @@ var createGrid = function() {
 
 createGrid();
 
-// var isWin = (a,b)=>
-//   a.every( (piece, i) =>
-//     piece === b[i]
-//   )
-
-
-// var isWin = function(a,b) {
-//   return a.every( function(piece, i) {
-//     return piece === b[i];
-//   })
-// }
-
-var turn = 0;
-
 // after DOM loads
 $(function(event) {
 console.log("Puzzle-d!");
+
+// VARIABLES
+currentBoard = $('#piece').toArray();
+
+
+// Function to create the individual divs that will populate the game board.
 
 var $container = $('.container');
 var createBoard = function() {
@@ -52,23 +51,11 @@ var createBoard = function() {
 
 createBoard();
 
-
-function createVariables() {
-  boxes = $('.piece');
-  // solution = $('.piece').toArray();
-  currentBoard = $('#piece').toArray();
-}
-
-// solution = $('.piece').toArray();
-createVariables();
-
-
+// function to check if all of the puzzle pieces are in the correct order on the board.
 function checkWin() {
   var win = true;
   for (var i = 0; i < currentBoard.length; i++) {
     if (currentBoard[i].id != ('piece' + i)) {
-      console.log(currentBoard[i].id)
-      console.log('piece' + i)
       win = false;
     }
   }
@@ -77,41 +64,17 @@ function checkWin() {
 
 // Function that generates the puzzle.
 var startPuzzle = function() {
+  boxes = $('.piece');
   for(var i = 0; i < boxes.length; i++) {
     var target = Math.floor(Math.random() * boxes.length - 1) + 1;
     var target2 = Math.floor(Math.random() * boxes.length -1) + 1;
     boxes.eq(target).before(boxes.eq(target2));
   }
   currentBoard = $('.piece').toArray();
+  this.disabled = true;
 }
 
-// Function that solves puzzle. To remove after game finished.
-var solvePuzzle = function() {
-  for (var i = 0; i < boxes.length; i++) {
-    $("#piece"+ i).insertAfter("#piece" + (i-1));
-  }
-  currentBoard = $('.piece').toArray();
-}
-
-
-// Generates puzzle
-$('.generatePuzzle').on('click', startPuzzle);
-
-
-
-// Solves the puzzle (to remove after game is built)
-$('.fixPuzzle').on('click', solvePuzzle);
-
-
-// Win condition check
-// $('.winCheck').on('click', function() {
-//     if(isWin(solution, currentBoard) === true) {
-//       alert("you won!");
-//     }
-// });
-$('.winCheck').on('click', checkWin);
-
-// CLick and swap function
+// On first click collect piece ID, on second cick switch previous piece with current piece.
 $('.piece').on('click', function() {
   console.log('test!');
   if(turn === 0) {
@@ -130,6 +93,28 @@ $('.piece').on('click', function() {
     turn--;
   }
 })
+
+// Function that solves puzzle. To remove after game finished.
+var solvePuzzle = function() {
+  boxes = $('.piece');
+  for (var i = 0; i < boxes.length; i++) {
+    $("#piece"+ i).insertAfter("#piece" + (i-1));
+  }
+  currentBoard = $('.piece').toArray();
+}
+
+
+// EVENT LISTENERS
+
+// Generates puzzle
+$('.generatePuzzle').on('click', startPuzzle);
+
+
+// Solves the puzzle (to remove after game is built)
+$('.fixPuzzle').on('click', solvePuzzle);
+
+// Checks to see if winning condition is met.
+$('.winCheck').on('click', checkWin);
 
 
 });
