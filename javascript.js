@@ -277,6 +277,34 @@ var solvePuzzle = function() {
 }
 
 
+// Timer function
+
+var timerBox = function() {
+  var time = '0:0:0';
+    parts = time.split(':');
+    hours= +parts[0];
+    minutes = +parts[1];
+    seconds = +parts[2];
+    input = $('#timeInput');
+
+  var timer = setInterval(function(){
+    seconds++;
+    if(seonds === 60) {
+      seconds = 00;
+      minutes ++;
+
+      if(minutes === 60) {
+        minutes = 00;
+        hours++;
+      }
+    }
+    var newTime = hours + ':' minutes + ':' + seconds;
+  }, 1000);
+}
+
+
+
+
 // EVENT LISTENERS
 
 // Loads puzzle
@@ -284,6 +312,7 @@ var solvePuzzle = function() {
 // EASY PUZZLE LOADING
 $('.loadEasy').on('click', createGridEasy);
 $('.loadEasy').on('click', createBoardEasy);
+$('.loadEasy').on('click', timerBox);
 
 // MEDIUM PUZZLE LOADING
 $('.loadMedium').on('click', createGridMedium);
