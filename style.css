@@ -93,8 +93,8 @@ p {
 .form-container {
   display: flex;
   box-sizing: border-box;
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: 20%;
+  margin-left: 20%;
   margin-top: 8%;
   padding-right: 5%;
   padding-left: 5%;
@@ -102,11 +102,13 @@ p {
 }
 
 .form-column1 {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: 100%;
   display: inline-block;
   width: 30%;
+  padding-top:;
 }
 
 .form-column2 {
@@ -119,22 +121,56 @@ p {
 
 label {
   box-sizing: border-box;
-  display: block;
+  display: inline-block;
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-top: 11px;
+  margin-bottom: 10px;
+  padding-top: 2px;
 }
 
-input {
-  width: 300px;
+.fav-color {
+  padding-top: 2px;
+}
+
+.text-box {
+  box-sizing: border-box;
+  width: 350px;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-/*
-h6 {
+  background-color: rgb(22, 22, 22);
   color: rgb(230, 230, 230);
   font-family: 'PT Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  border-bottom: 1px solid rgb(126, 126, 126);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 60%;
+  margin: 0 auto;
+
+}
+
+.submit {
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  color: rgb(230, 230, 230);
+  background-color: rgb(120, 80, 150);
   font-size: 20px;
-  font-weight: 300;
-  display: inline;
-}*/
+  border: none;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}

@@ -27,6 +27,7 @@
       <p class="grey">Create a username to get started</p>
 
     <form id="user-info" action="start-puzzle" method="post">
+
     <div class="form-container">
 
 
@@ -34,17 +35,21 @@
         <label for="username">Username:</label>
         <label for="first-name">First Name:     </label>
         <label for="last-name">Last Name:       </label>
-        <label for="favorite-color">Favorite Color:</label>
+        <label class="fav-color" for="favorite-color">Favorite Color:</label>
       </div>
 
       <div class="form-column2">
-        <input type="text" id="username" name="username">
-        <input type="text" id="first-name" name="first-name">
-        <input type="text" id="last-name" name="last-name">
-        <input type="text" id="favorite-color" name="favorite-color">
+        <input class="text-box" type="text" id="username" name="username">
+        <input class="text-box" type="text" id="first-name" name="first-name">
+        <input class="text-box" type="text" id="last-name" name="last-name">
+        <input class="text-box" type="text" id="favorite-color" name="favorite-color">
       </div>
-
     </div>
+
+    <div class="submit-button">
+      <input class="submit" type="submit" value="Play now!">
+    </div>
+
     </form>
 
     </div>
