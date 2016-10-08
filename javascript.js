@@ -9,17 +9,22 @@ var turn = 0;
 
 
 // images mostly come from http://wallpapersafari.com/fantasy-wallpaper-hd/
+// and icloudpicture.com
+// and wallpapercave.com
+// and wallpaperspider.com
+// and hebus.org
+
 var urls = [
-  'url("http://i.imgur.com/HWs6Mym.jpg")',
-  'url("http://i.imgur.com/m5JWcJs.jpg?1")',
-  'url(http://i.imgur.com/NABahjE.jpg?1)',
-  'url("http://i.imgur.com/B8xsff4.jpg?1")',
-  'url("http://i.imgur.com/b5gcmnR.jpg?1")',
-  'url("http://i.imgur.com/CWvP6zh.jpg?1")',
-  'url("http://i.imgur.com/wxiGxy4.jpg?1")',
-  'url("http://i.imgur.com/mGOb37s.jpg1")',
-  'url("http://i.imgur.com/v1PL2vP.jpg?1")',
-  'url("http://i.imgur.com/7yaWUPc.jpg?1")'
+  'url("http://i.imgur.com/B8xsff4.jpg?4")',
+  'url("http://i.imgur.com/b5gcmnR.jpg?2")',
+  'url(http://i.imgur.com/CWvP6zh.jpg?3)',
+  'url("http://i.imgur.com/wxiGxy4.jpg?2")',
+  'url("http://i.imgur.com/mGOb37s.jpg?2")',
+  'url("http://i.imgur.com/v1PL2vP.jpg?2")',
+  'url("http://i.imgur.com/7yaWUPc.jpg?2")',
+  'url("http://i.imgur.com/NABahjE.jpg?2")',
+  'url("http://i.imgur.com/m5JWcJs.jpg?2")',
+  'url("http://i.imgur.com/HWs6Mym.jpg?2")'
 ];
 
 var randomUrl = Math.floor(Math.round(Math.random() * (urls.length - 1)))
@@ -47,14 +52,14 @@ console.log("Puzzle-d!");
 var currentBoard = $('#piece').toArray();
 
 // Easy Dimensions
-var easyHeight = 300;
-var easyWidth = 800;
-var mediumHeight = 150;
-var mediumWidth = 400;
-var hardHeight = 150;
-var hardWidth = 200
-var expertHeight = 100;
-var expertWidth = 100;
+var easyHeight = 169;
+var easyWidth = 451;
+var mediumHeight = 84.5;
+var mediumWidth = 225.5;
+var hardHeight = 84.5;
+var hardWidth = 112.75;
+var expertHeight = 50.7;
+var expertWidth = 56.375;
 
 
 // Functions to load boards
@@ -93,7 +98,7 @@ var createGridHard = function() {
 var createGridExpert = function() {
   for (var i = 0; i < 16; i++) {
     grid[i] =[];
-    for (var j = 0; j < 9; j++) {
+    for (var j = 0; j < 10; j++) {
       grid[i][j] = { x: (i * -expertWidth), y: (j * -expertHeight)};
     }
   }

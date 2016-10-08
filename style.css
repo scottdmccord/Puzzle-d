@@ -1,14 +1,7 @@
-#board {
-
-  background-size: cover;
-  height: 600px;
-  width: 900px;
-}
-
 .container {
   display: flex;
-  height: 900px;
-  width: 1600px;
+  height: 507px;
+  width: 902px;
   background-color: grey;
   flex-wrap: wrap;
   flex-direction: column;
