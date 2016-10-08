@@ -24,7 +24,24 @@ var urls = [
   'url("http://i.imgur.com/7yaWUPc.jpg?2")',
   'url("http://i.imgur.com/NABahjE.jpg?2")',
   'url("http://i.imgur.com/m5JWcJs.jpg?2")',
-  'url("http://i.imgur.com/HWs6Mym.jpg?2")'
+  'url("http://i.imgur.com/HWs6Mym.jpg?2")',
+  'url(http://i.imgur.com/WTfFodP.jpg?1)',
+  'url(http://i.imgur.com/oebBjiq.jpg?1)',
+  'url(http://i.imgur.com/HHNJgI4.jpg?1)',
+  'url(http://i.imgur.com/78E3bq8.jpg?1)',
+  'url(http://i.imgur.com/j9ZGSEo.jpg?1)',
+  'url(http://i.imgur.com/4tHIBRd.jpg?1)',
+  'url(http://i.imgur.com/8DdNP7D.jpg?1)',
+  'url(http://i.imgur.com/N68ZBQq.jpg?1)',
+  'url(http://i.imgur.com/tCsEvH1.jpg?1)',
+  'url(http://i.imgur.com/t0UZaxh.jpg?1)',
+  'url(http://i.imgur.com/ylZqPy0.jpg?1)',
+  'url(http://i.imgur.com/XWEwK0t.jpg?1)',
+  'url(http://i.imgur.com/YfvBWpt.jpg?1)',
+  'url(http://i.imgur.com/2fAB4Dd.jpg?1)',
+  'url(http://i.imgur.com/bPE5EGG.jpg?1)',
+  'url(http://i.imgur.com/lkDTmWU.jpg?1)',
+  'url(http://i.imgur.com/XvW5rbG.jpg?1)'
 ];
 
 var randomUrl = Math.floor(Math.round(Math.random() * (urls.length - 1)))
