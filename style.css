@@ -174,3 +174,7 @@ label {
   justify-content: center;
   height: 100px;
 }
+
+.timer {
+  color: rgb(230, 230, 230);
+}

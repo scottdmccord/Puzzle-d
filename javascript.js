@@ -294,31 +294,22 @@ var solvePuzzle = function() {
 
 // Timer function
 
-// var timerBox = function() {
-//   var time = '0:0:0';
-//     parts = time.split(':');
-//     hours= +parts[0];
-//     minutes = +parts[1];
-//     seconds = +parts[2];
-//     input = $('#timeInput');
+var startTimer = function(){
+  var sec = 0;
 
-//   var timer = setInterval(function(){
-//     seconds++;
-//     if(seonds === 60) {
-//       seconds = 00;
-//       minutes ++;
+  var pad = function(val) {
+    return val > 9 ? val : "0" + val;
+  }
 
-//       if(minutes === 60) {
-//         minutes = 00;
-//         hours++;
-//       }
-//     }
-//     var newTime = hours + ':' minutes + ':' + seconds;
-//   }, 1000);
-// }
+  var timer = setInterval(function () {
+    $('#seconds').html(pad(++sec % 60));
+    $('#minutes').html(pad(parseInt(sec / 60, 10)));
+  }, 1000);
 
-
-
+  setTimeout(function() {
+    clearInterval(timer);
+  }, 9900000);
+}
 
 // EVENT LISTENERS
 
@@ -327,7 +318,6 @@ var solvePuzzle = function() {
 // EASY PUZZLE LOADING
 $('.loadEasy').on('click', createGridEasy);
 $('.loadEasy').on('click', createBoardEasy);
-// $('.loadEasy').on('click', timerBox);
 
 // MEDIUM PUZZLE LOADING
 $('.loadMedium').on('click', createGridMedium);
@@ -344,6 +334,7 @@ $('.loadExpert').on('click', createBoardExpert);
 // Generates puzzle
 $('.generatePuzzle').on('click', startPuzzle);
 $('.generatePuzzle').on('click', swapTiles);
+$('.generatePuzzle').on('click', startTimer);
 
 
 // Solves the puzzle (to remove after game is built)
