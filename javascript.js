@@ -41,7 +41,22 @@ var urls = [
   'url(http://i.imgur.com/2fAB4Dd.jpg?1)',
   'url(http://i.imgur.com/bPE5EGG.jpg?1)',
   'url(http://i.imgur.com/lkDTmWU.jpg?1)',
-  'url(http://i.imgur.com/XvW5rbG.jpg?1)'
+  'url(http://i.imgur.com/XvW5rbG.jpg?1)',
+  'url(http://i.imgur.com/QpNUSmu.jpg?1)',
+  'url(http://i.imgur.com/x5hvRpM.jpg?1)',
+  'url(http://i.imgur.com/we5I01I.jpg?1)',
+  'url(http://i.imgur.com/Oyulxw2.jpg?1)',
+  'url(http://i.imgur.com/SvPUVD4.jpg?1)',
+  'url(http://i.imgur.com/Cx4sIMa.jpg?1)',
+  'url(http://i.imgur.com/gCyXIMp.jpg?1)',
+  'url(http://i.imgur.com/3QO407x.jpg?1)',
+  'url(http://i.imgur.com/iFPHLUy.jpg?1)',
+  'url(http://i.imgur.com/lepW0fU.jpg?1)',
+  'url(http://i.imgur.com/Wznote1.jpg?1)',
+  'url(http://i.imgur.com/VReShs1.jpg?1)',
+  'url(http://i.imgur.com/uWySC43.jpg?1)',
+  'url(http://i.imgur.com/IgkwQ9j.jpg?1)'
+
 ];
 
 var randomUrl = Math.floor(Math.round(Math.random() * (urls.length - 1)))
@@ -279,28 +294,28 @@ var solvePuzzle = function() {
 
 // Timer function
 
-var timerBox = function() {
-  var time = '0:0:0';
-    parts = time.split(':');
-    hours= +parts[0];
-    minutes = +parts[1];
-    seconds = +parts[2];
-    input = $('#timeInput');
+// var timerBox = function() {
+//   var time = '0:0:0';
+//     parts = time.split(':');
+//     hours= +parts[0];
+//     minutes = +parts[1];
+//     seconds = +parts[2];
+//     input = $('#timeInput');
 
-  var timer = setInterval(function(){
-    seconds++;
-    if(seonds === 60) {
-      seconds = 00;
-      minutes ++;
+//   var timer = setInterval(function(){
+//     seconds++;
+//     if(seonds === 60) {
+//       seconds = 00;
+//       minutes ++;
 
-      if(minutes === 60) {
-        minutes = 00;
-        hours++;
-      }
-    }
-    var newTime = hours + ':' minutes + ':' + seconds;
-  }, 1000);
-}
+//       if(minutes === 60) {
+//         minutes = 00;
+//         hours++;
+//       }
+//     }
+//     var newTime = hours + ':' minutes + ':' + seconds;
+//   }, 1000);
+// }
 
 
 
@@ -312,7 +327,7 @@ var timerBox = function() {
 // EASY PUZZLE LOADING
 $('.loadEasy').on('click', createGridEasy);
 $('.loadEasy').on('click', createBoardEasy);
-$('.loadEasy').on('click', timerBox);
+// $('.loadEasy').on('click', timerBox);
 
 // MEDIUM PUZZLE LOADING
 $('.loadMedium').on('click', createGridMedium);
