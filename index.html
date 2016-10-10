@@ -17,7 +17,7 @@
     <div class="logo">Puzzled</div>
     <div class="user-information"></div>
     <div class="timer">
-      <span id="minutes">00</span>:<span id="seconds">00</span><!-- :<span id="tenths">00</span> -->
+      <span id="minutes">00</span>:<span id="seconds">00</span>
     </div>
 
   </div>
@@ -27,13 +27,17 @@
 
   <div class="button-container">
 
-    <button class="loadEasy"> Load easy puzzle! </button>
-    <button class="loadMedium"> Load medium puzzle! </button>
-    <button class="loadHard"> Load hard puzzle! </button>
-    <button class="loadExpert"> Load expert puzzle! </button>
-    <button class="generatePuzzle"> Generate Puzzle! </button>
-    <button class="fixPuzzle"> Solve Puzzle! </button>
-    <button class="winCheck"> Win Check </button>
+    <div class="difficulty">
+      <button class="loadEasy load"> Easy </button>
+      <button class="loadMedium load"> Medium </button>
+      <button class="loadHard load"> Hard </button>
+      <button class="loadExpert load"> Expert </button>
+    </div>
+
+    <div class="puzzleStart">
+      <button class="generatePuzzle puzzleStartButton"> Start Puzzle </button>
+      <button class="newPuzzle puzzleStartButton"> New Puzzle </button>
+    </div>
 
   </div>
 

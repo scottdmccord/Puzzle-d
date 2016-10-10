@@ -213,6 +213,7 @@ var createBoardHard = function() {
   this.disabled = true;
 }
 
+
 //EXPERT
 var $container = $('.container');
 var createBoardExpert = function() {
@@ -235,8 +236,6 @@ var createBoardExpert = function() {
 this.disabled = true;
 }
 
-
-// createBoard();
 
 // Function that generates the puzzle.
 var startPuzzle = function() {
@@ -342,23 +341,26 @@ $('.loadHard').on('click', createBoardHard);
 $('.loadExpert').on('click', createGridExpert);
 $('.loadExpert').on('click', createBoardExpert);
 
+// DISABLE LOAD BUTTONS AFTER PRESSED
+$('.load').on('click', function() {
+  $('.load').prop('disabled', true);
+});
+
+
 // Generates puzzle
 $('.generatePuzzle').on('click', startPuzzle);
 $('.generatePuzzle').on('click', swapTiles);
 $('.generatePuzzle').on('click', startTimer);
 
 
-// Solves the puzzle (to remove after game is built)
-$('.fixPuzzle').on('click', solvePuzzle);
-
-// Checks to see if winning condition is met.
-$('.winCheck').on('click', checkWin);
-
 
 // Logins in the username in the top righthand corner
 $('.user-information').text("Good luck, " + $username[1] + "!");
 
-
+// Re-loads website to generate to puzzle
+$('.newPuzzle').on('click', function() {
+  window.location.reload();
+  });
 
 });
 
