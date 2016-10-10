@@ -61,22 +61,6 @@ var urls = [
 
 var randomUrl = Math.floor(Math.round(Math.random() * (urls.length - 1)))
 
-// FUNCTIONS:
-
-// function that creates the objects with x and y coordinates that get placed inside the grid array.
-// var createGridEasy = function() {
-//   for (var i = 0; i < 2; i++) {
-//     grid[i] =[];
-//     for (var j = 0; j < 3; j++) {
-//       grid[i][j] = { x: (i * -800), y: (j * -300)};
-//     }
-//   }
-// }
-
-// createGrid();
-
-
-
 // USERNAME DISPLAY
 
 var $data = window.location.search;
@@ -361,6 +345,54 @@ $('.user-information').text("Good luck, " + $username[1] + "!");
 $('.newPuzzle').on('click', function() {
   window.location.reload();
   });
+
+// Modul popup to alert win
+
+// var modal = (function() {
+//   var $window = $(window);
+//   var $modal = $('<div class="modal" />');
+//   var $content = $('<div class="modal-content">You won!</div>');
+//   var $close = $('<button role="button" class="modal-close">close</button>');
+
+//   $modal.append($content, $close);
+
+//   $close.on('click', function(e){
+//     e.preventDefault();
+//     modal.close();
+//   });
+
+//   return {
+//     center : function() {
+//       var top = Math.max($window.height() - $modal.outerHeight(), 0) / 2;
+//       var left = Math.max($window.height() - $modal.outerWidth(), 0) / 2;
+//       $modal.css({
+//         top: top + $window.scrollTop(),
+//         left: left + $window.scrollLeft()
+//       });
+//     },
+
+//     open: function(settings) {
+//       $content.empty().append(settings.content);
+
+//       $modal.css({
+//         width: settings.width || 'auto',
+//         height: settings.height || 'auto'
+//       }).appendTo('body');
+
+//       modal.center();
+//       $window.on('resize', modal.center);
+//     },
+
+//     close: function() {
+//       $content.empty();
+//       $modal.detach();
+//       $(window).off('resize', modal.center);
+//     }
+//   };
+// }());
+
+
+
 
 });
 

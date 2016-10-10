@@ -135,7 +135,7 @@ p {
   height: 100%;
   display: inline-block;
   width: 30%;
-  padding-top:;
+  padding-top: 2px;
 }
 
 .form-column2 {
@@ -149,6 +149,7 @@ p {
 label {
   box-sizing: border-box;
   display: inline-block;
+  font-size: 15px;
   width: 100%;
   margin-top: 11px;
   margin-bottom: 10px;
@@ -209,6 +210,7 @@ label {
   height: 40%;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   margin: 10px;
 }
 
@@ -250,3 +252,97 @@ label {
   border: none;
   font-size: 15px;
 }
+
+/*.modal {
+  height: 25%;
+  width: 25%;
+  position: absolute;
+  z-index: 1000;
+}*/
+
+@media (max-width: 800px) {
+
+  .logo {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .grey {
+    font-size: 15px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+
+  .text-box {
+    font-size: 10px;
+    width: 200px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
+
+  .submit {
+  height: 28px;
+  width: 100px;
+  border-radius: 3px;
+  color: rgb(230, 230, 230);
+  background-color: rgb(120, 80, 150);
+  font-size: 12px;
+  border: none;
+  }
+
+  .user-information {
+    font-size: 15px;
+    margin-top: 0px;
+  }
+
+  .timer {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+  .load {
+    padding-right: 7px;
+    padding-left: 7px;
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 50%;
+    font-size: 10px;
+  }
+
+  .puzzleStartButton {
+    padding-right: 7px;
+    padding-left: 7px;
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 50%;
+    font-size: 10px;
+  }
+
+}
+
+@media (max-width: 620px) {
+
+  .text-box {
+    margin-bottom: 25px;
+  }
+
+  .form-container {
+    padding-left: 0px;
+  }
+
+  .text-box {
+    box-sizing: border-box;
+    margin-left: 40px;
+    width: 100px;
+    right: 0;
+  }
+}
+
