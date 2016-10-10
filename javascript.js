@@ -236,7 +236,6 @@ var startPuzzle = function() {
 
 
 // On first click collect piece ID, on second cick switch previous piece with current piece.
-
 function swapTiles() {
   $('.clickPiece').on('click', function() {
   console.log('test!');
@@ -272,21 +271,14 @@ function checkWin() {
   if(win === true) {
     setTimeout(function() {
       clearInterval(timer);
-      alert('You win!')}, 250);
+      alert('You win! Click "New Puzzle" to try again')}, 250);
   }
-}
-
-// Function that solves puzzle. To remove after game finished.
-var solvePuzzle = function() {
-  boxes = $('.piece');
-  for (var i = 0; i < boxes.length; i++) {
-    $("#piece"+ i).insertAfter("#piece" + (i-1));
-  }
-  currentBoard = $('.piece').toArray();
 }
 
 
 // Timer function
+// learned from stackoverflow:
+// http://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript
 
 var startTimer = function(){
   var sec = 0;
@@ -347,6 +339,7 @@ $('.newPuzzle').on('click', function() {
   });
 
 // Modul popup to alert win
+// Taken from JavaScript & jQuery guide by Jon Duckett, still not working.
 
 // var modal = (function() {
 //   var $window = $(window);
@@ -390,7 +383,6 @@ $('.newPuzzle').on('click', function() {
 //     }
 //   };
 // }());
-
 
 
 
