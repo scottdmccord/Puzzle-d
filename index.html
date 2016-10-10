@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Puzzle-d - Play</title>
+  <title>Puzzled - Play</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
   <script src="javascript.js"></script>
@@ -14,7 +14,12 @@
 <body class="game-page">
 
   <div class="nav-bar">
-    <div class="logo">Puzzle-d</div>
+    <div class="logo">Puzzled</div>
+    <div class="user-information"></div>
+    <div class="timer">
+      <span id="minutes">00</span>:<span id="seconds">00</span><!-- :<span id="tenths">00</span> -->
+    </div>
+
   </div>
 
 
@@ -29,9 +34,6 @@
     <button class="generatePuzzle"> Generate Puzzle! </button>
     <button class="fixPuzzle"> Solve Puzzle! </button>
     <button class="winCheck"> Win Check </button>
-    <div class="timer">
-      <span id="minutes">00</span>:<span id="seconds">00</span>
-    </div>
 
   </div>
 

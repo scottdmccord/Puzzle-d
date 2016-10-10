@@ -75,6 +75,15 @@ var randomUrl = Math.floor(Math.round(Math.random() * (urls.length - 1)))
 
 // createGrid();
 
+
+
+// USERNAME DISPLAY
+
+var $data = window.location.search;
+$data = $data.split('&');
+var $username = $data[0].split('=');
+
+
 // after DOM loads
 $(function(event) {
 console.log("Puzzle-d!");
@@ -278,7 +287,9 @@ function checkWin() {
   }
   console.log(win);
   if(win === true) {
-    alert("you win!");
+    setTimeout(function() {
+      clearInterval(timer);
+      alert('You win!')}, 250);
   }
 }
 
@@ -301,7 +312,7 @@ var startTimer = function(){
     return val > 9 ? val : "0" + val;
   }
 
-  var timer = setInterval(function () {
+  timer = setInterval(function () {
     $('#seconds').html(pad(++sec % 60));
     $('#minutes').html(pad(parseInt(sec / 60, 10)));
   }, 1000);
@@ -342,6 +353,11 @@ $('.fixPuzzle').on('click', solvePuzzle);
 
 // Checks to see if winning condition is met.
 $('.winCheck').on('click', checkWin);
+
+
+// Logins in the username in the top righthand corner
+$('.user-information').text("Good luck, " + $username[1] + "!");
+
 
 
 });
