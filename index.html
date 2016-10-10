@@ -1,6 +1,8 @@
 <!-- Project Name: Puzzled
      Author: Scott McCord -->
 
+<!-- landing page modeled off: http://go.fivestars.com/fivestars-trial -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +10,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Puzzled - Play</title>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
-  <script src="javascript.js"></script>
+  <title>Puzzled - Home</title>
 
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
@@ -19,34 +18,45 @@
 
 </head>
 
-<body class="game-page">
-
-<!--   <div class="modal"></div> -->
+<body class="landing">
 
   <div class="nav-bar">
-
     <div class="logo">Puzzled</div>
-    <div class="user-information"></div>
-    <div class="timer">
-      <span id="minutes">00</span>:<span id="seconds">00</span>
-    </div>
-
   </div>
 
-  <div class='container'></div>
+  <div class="masthead-container">
 
-  <div class="button-container">
+    <div class="text-container">
 
-    <div class="difficulty">
-      <button class="loadEasy load"> Easy </button>
-      <button class="loadMedium load"> Medium </button>
-      <button class="loadHard load"> Hard </button>
-      <button class="loadExpert load"> Expert </button>
+      <p> Sip some tea, grab a blanket, and focus your mind. Ready for a puzzle? </p>
+      <p class="grey">Create a username to get started</p>
+
+    <form id="user-info" action="puzzled.html" method="get">
+
+    <div class="form-container">
+
+      <div class="form-column1">
+        <label for="username">Username:</label>
+        <label for="first-name">First Name:     </label>
+        <label for="last-name">Last Name:       </label>
+        <label class="fav-color" for="favorite-color">Favorite Color:</label>
+      </div>
+
+      <div class="form-column2">
+        <input class="text-box" type="text" id="username" name="username">
+        <input class="text-box" type="text" id="first-name" name="first-name">
+        <input class="text-box" type="text" id="last-name" name="last-name">
+        <input class="text-box" type="text" id="favorite-color" name="favorite-color">
+      </div>
+
     </div>
 
-    <div class="puzzleStart">
-      <button class="generatePuzzle puzzleStartButton"> Start Puzzle </button>
-      <button class="newPuzzle puzzleStartButton"> New Puzzle </button>
+    <div class="submit-button">
+      <input class="submit" type="submit" value="Play now!">
+    </div>
+
+    </form>
+
     </div>
 
   </div>
