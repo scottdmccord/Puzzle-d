@@ -54,8 +54,16 @@ var urls = [
   'url(http://i.imgur.com/Wznote1.jpg?1)',
   'url(http://i.imgur.com/VReShs1.jpg?1)',
   'url(http://i.imgur.com/uWySC43.jpg?1)',
-  'url(http://i.imgur.com/IgkwQ9j.jpg?1)'
-
+  'url(http://i.imgur.com/IgkwQ9j.jpg?1)',
+  'url(http://i.imgur.com/PyqzPG3.jpg?1)',
+  'url(http://i.imgur.com/MdVuE8P.jpg?2)',
+  'url(http://i.imgur.com/Cs5bXz2.jpg?1)',
+  'url(http://i.imgur.com/Gbbm7bg.jpg?1)',
+  'url(http://i.imgur.com/kK5lz2s.jpg?1)',
+  'url(http://i.imgur.com/dzj0cfV.jpg?1)',
+  'url(http://i.imgur.com/A1QAFxL.jpg?1)',
+  'url(http://i.imgur.com/fHBsrxi.jpg?1)',
+  'url(http://i.imgur.com/6uw6kdc.jpg?1)'
 ];
 
 // randomly pulls an image from the urls array to display as the puzzle
@@ -345,7 +353,7 @@ function checkWin() {
   var win = true;
   // iterate through the number of pieces on the board
   for (var i = 0; i < currentBoard.length; i++) {
-    // check to see if each div's id is equaly to it's place on the board
+    // check to see if each div's id is equal to it's place on the board
     // i.e. is the div with the id piece0 on the first tile on the board?
     // if not all divs are matched to their position, win = false
     if (currentBoard[i].id != ('piece' + i)) {
