@@ -63,7 +63,22 @@ var urls = [
   'url(http://i.imgur.com/dzj0cfV.jpg?1)',
   'url(http://i.imgur.com/A1QAFxL.jpg?1)',
   'url(http://i.imgur.com/fHBsrxi.jpg?1)',
-  'url(http://i.imgur.com/6uw6kdc.jpg?1)'
+  'url(http://i.imgur.com/6uw6kdc.jpg?1)',
+  'url(http://i.imgur.com/CB0DiJ0.jpg?1)',
+  'url(http://i.imgur.com/csQNW88.jpg?1)',
+  'url(http://i.imgur.com/aBHrLnf.jpg?2)',
+  'url(http://i.imgur.com/UT4ajg4.jpg?1)',
+  'url(http://i.imgur.com/myj9KwV.jpg?1)',
+  'url(http://i.imgur.com/pQiw6G2.jpg?1)',
+  'url(http://i.imgur.com/8c6bicg.jpg?1)',
+  'url(http://i.imgur.com/nmW0Ucz.jpg?1)',
+  'url(http://i.imgur.com/4LFFRjt.jpg?1)',
+  'url(http://i.imgur.com/9cR1z7L.jpg?1)',
+  'url(http://i.imgur.com/e6b2N1s.jpg?1)',
+  'url(http://i.imgur.com/UGtZFhY.jpg?1)',
+  'url(http://i.imgur.com/HOJLRTO.jpg?1)',
+  'url(http://i.imgur.com/Saq65n9.jpg?1)',
+  'url(http://i.imgur.com/j7jAjSy.jpg?1)',
 ];
 
 // randomly pulls an image from the urls array to display as the puzzle
