@@ -381,7 +381,7 @@ function checkWin() {
     // after waiting for 1/4th of a second (so the puzzle finishes)
     setTimeout(function() {
       clearInterval(timer);
-      alert('You win! Click "New Puzzle" to try again')}, 250);
+      alert('You win! Click "New Puzzle" to try again')}, 1250);
   }
 }
 

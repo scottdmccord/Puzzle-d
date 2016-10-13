@@ -111,6 +111,18 @@ p {
   flex-direction: column;
 }
 
+/*.containerComplete {
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  height: 507px;
+  width: 902px;
+  background-color: rgb(22, 22, 22);
+  flex-wrap: wrap;
+  flex-direction: column;
+  transansform: 2s;*/
+}
+
 #user-info {
   color: rgb(230, 230, 230);
   font-family: 'PT Sans', sans-serif;
@@ -259,6 +271,19 @@ label {
   position: absolute;
   z-index: 1000;
 }*/
+
+
+.clickPiece {
+  box-sizing: border-box;
+  border: solid black 1px;
+/*  transform: border;*/
+}
+
+.clickPiece:hover {
+  transition-duration: 2s;
+  box-sizing: border-box;
+  border: solid yellow 1px;
+}
 
 @media (max-width: 800px) {
 
