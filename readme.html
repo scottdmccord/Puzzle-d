@@ -1,0 +1,72 @@
+Puzzled - Readme file
+
+The Game:
+
+Puzzled is a timed jigsaw puzzle game built with HTML, Javascript, and
+jQuery. Users start the game by selecting a game difficulty level: easy,
+medium, hard, or expert. Easy games have only 6 tiles on the board, and
+the number of tiles progress with each increasing difficulty. After the
+board has been assembled, the user clicks "Start Puzzle" and the tiles
+will randomly shuffle around the board. Because this is a timed game,
+the user will only get to see the complete image before he starts the
+puzzle.
+
+Once the board is generated and shuffed, the user can swap two tiles.
+To swap tiles, a user clicks on the tile he wishes to move. Then the user clicks on
+the position that he wishes to move the tile to. On the second click,
+the first tile will switch positions with the tile under the second click.
+When the puzzle is put back together, a notification alerts the user that
+he has won the game. At the top of the page, a timer displays the time
+it took the user to finish the puzzle. If the user wishes to play again,
+he can click the "New Puzzle" button to start the game over again.
+
+The landing page:
+
+The landing page was modeled off of the website:
+http://go.fivestars.com/fivestars-trial
+
+There is a form with four fields, a username, first name, last name,
+and favorite color. For now, only the username carries over to the
+game page. Ideally, I want to have the first and last name, as well as
+favorite color, displayed on leader boards when I get that working.
+
+Technologies used:
+
+The puzzle consists of a container div which holds several divs inside
+of it, depending on the difficulty. I first created a function that
+uses two for loops to create a nested array (two arrays, one inside
+of the other). Inside of these arrays, I store the x and y coordinates
+that my later "createBoard" function uses to slice up the puzzle
+image into multiple divs.
+
+Once the x and y coordinates are generated, I have another function that
+also consists of two for loops to actually create the divs, add the
+background image, and then set the the proper x and y coordinates (
+generated from the previous function) so that the divs display their
+proper piece of the image. These divs are then appended to the container.
+Each div is also assigned a unique id, which helps to determine if
+the user put the puzzle back together again (will be explained later).
+
+To swap tiles, I used an if / else statement (if first click,
+if second click) to swap background-position coordinates and
+ids of the tile divs. Everytime two divs are swapped, a function
+is run to check to see if all the divs are put in order again.
+
+To determine if all tiles are put back properly, I used a for loop to
+circle through all of the tile div's ids. If the div ids follow a
+sequential order (ie. piece0, piece1, piece2, etc) the winning condition
+is met.
+
+Finally, I use a timer function so that the user can see how long it
+takes to solve an individual puzzle.
+
+
+Next steps:
+
+Later this week, I would like to add a leaderboard feature, where
+I can store high scores and everytime a user finishes a puzzle, if
+their score is the highest, their username and highscore
+will be displayed.
+
+I also want to create a modul to replace the win alert.
+
