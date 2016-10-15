@@ -166,6 +166,8 @@ label {
   margin-top: 11px;
   margin-bottom: 10px;
   padding-top: 2px;
+  color: rgb(230, 230, 230);
+  font-family: 'PT Sans', sans-serif;
 }
 
 .fav-color {
