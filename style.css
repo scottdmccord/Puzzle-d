@@ -281,11 +281,11 @@ label {
 /*  transform: border;*/
 }
 
-.clickPiece:hover {
+/*.clickPiece:hover {
   transition-duration: 2s;
   box-sizing: border-box;
   border: solid yellow 1px;
-}
+}*/
 
 @media (max-width: 800px) {
 
